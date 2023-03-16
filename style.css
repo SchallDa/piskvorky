@@ -1,4 +1,4 @@
-/*.flex-container {
+.flex-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -17,9 +17,8 @@
 }
 body {
     background-image: linear-gradient(#615dad,#ffc8da );
-
 }
-.flex-container {
+/*.flex-container {
     background-color: #283e50;
     
 }
