@@ -1,14 +1,14 @@
+
 .hra_flex {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    border-color: black;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 10%;
-    margin-bottom: 10%;
-
+    align-content: center;
+    margin-left: 17%;
+    margin-right: 17%;
+    max-width: 80vmin;
+    height:95vh; 
 }
 *,
 :before
@@ -17,24 +17,81 @@
 }
 body {
     background-image: linear-gradient(#615dad,#ffc8da );
+    height:100vh;
+    overflow-y: hidden;
 }
+
 .hra_nadpis {
     text-align: center;
-    padding: 0,5rem;
     color: white;
     font-family: 'Lobster', cursive;
-    font-size: 120%; 
+    font-size: 3vmin; 
 }
 .hra_stred {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     color: white;
-    font-size: 120%;
-    text-align: center;
-    
+    font-size: 4vmin;
+    margin-bottom: 3vmin;
+    gap: 2vmin;
+   
+}
+img {
+    height:50%;
+    padding:2vmin;
+}
+.hraje {
+    display: inline-flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif; 
+}
+.domu {
+    background-color:#1fcca4;
+    flex-grow: 0;
+    border-radius: 10px;
+    border: none;
+}
+.domu:hover {
+    background-color: #1cbb96;
+}
+.zpet {
+    background-color: #0197f6;
+    flex-grow: 0;
+    border-radius: 10px;
+    border: none;
+}
+
+.zpet:hover{
+    background-color: #0090e9;
 }
 .hra_tabulka {
     display: flex;
     justify-content: center;
+    max-width: 100%;
+}
+.hraci_pole {
+    border: 2px solid black; 
+    border-spacing: 0px; 
+    max-width: 100%;
+}
+
+td {
+    border: 1px solid black; 
+    padding: 0%; 
+    box-shadow: none;
+    box-sizing: content-box;
+
+}
+.pole {
+width: 6vmin;
+height: 6vmin;
+display: block;
+background-color: #D8BFD8	;
+border: none;
+box-shadow: none; 
+
+}
+.pole:hover {
+    background-color:lavender
 }
