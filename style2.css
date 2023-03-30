@@ -1,3 +1,15 @@
+.hra_flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    border-color: black;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+}
 *,
 :before
 :after {
@@ -5,4 +17,24 @@
 }
 body {
     background-image: linear-gradient(#615dad,#ffc8da );
+}
+.hra_nadpis {
+    text-align: center;
+    padding: 0,5rem;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 120%; 
+}
+.hra_stred {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    font-size: 120%;
+    text-align: center;
+    
+}
+.hra_tabulka {
+    display: flex;
+    justify-content: center;
 }
