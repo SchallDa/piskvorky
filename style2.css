@@ -81,17 +81,29 @@ td {
     padding: 0%; 
     box-shadow: none;
     box-sizing: content-box;
+    height: 100%;
+   
 
 }
 .pole {
-width: 6vmin;
-height: 6vmin;
+width: 4vmin;
+height: 4vmin; 
 display: block;
 background-color: #D8BFD8	;
 border: none;
 box-shadow: none; 
 
+/* margin: 0;
+padding: 0; */
+
 }
+/button {
+    /* width: 4vmin;
+    height: 4vmin;  */
+    background-size: cover;
+    /* display: inline-block; 
+    display: flex;*/
+} 
 .pole:hover {
     background-color:lavender
 }
@@ -99,10 +111,15 @@ box-shadow: none;
 background-image: url("circle.svg"); 
 background-position: 70%;
 background-repeat: no-repeat;
+background-size: cover;
+
 }
 .board__field--cross {
 background-image: url("cross.svg");
 background-position: 70%;
+background-size: cover;
+/* height: 100%;
+width: 100%; */
 background-repeat: no-repeat;
 
 }

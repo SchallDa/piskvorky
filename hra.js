@@ -11,33 +11,52 @@ const nine=document.querySelector(`#nine`);
 const ten=document.querySelector(`#ten`);
 const playerIcon=document.querySelector(`#hraje-icon`);
 
+
 if (currentPlayer===`circle`) {
-    playerIcon.src=`circle.svg`
-}
+    playerIcon.src=`circle.svg` //přidá ikonu o za Hraje:
+} 
+// if (currentPlayer!==`circle`) {
+//     playerIcon.src=`cross.svg`
+// }
+// else {
+//     playerIcon.src=`cross.svg`
+// }
+// if (currentPlayer= ==`cross`) {
+//     playerIcon.src=`cross.svg`
+// }
 
 const crossOrCircle = (event) => {
     const player=event.target.classList
 
     if (currentPlayer===`circle`) {
-        hraje.src=`cross.svg`;
-        player.value=`board__field--circle`;
-        currentPlayer=`cross`
-       hraje.scr=`circle.svg`;
+        player.value= player.value +` ` +`board__field--circle`;
+        currentPlayer=`cross`;
+        event.target.disabled=true;
+        // playerIcon=`cross.svg`;
         
 
     } else {
-        currentPlayer===`cross`
-       hraje.src=`cross.svg`;
-        player.value=`board__field--cross`;
-        currentPlayer=`circle`;
+        // currentPlayer!==`circle`;
+        //  player.value=`board__field--cross`;
+        // currentPlayer=`circle`;
         player.src=`circle.svg`;
+        // event.target.disabled=true;
+        currentPlayer===`cross`;
+         player.value=player.value +` ` +`board__field--cross`; //vytváří křížky na button
+        currentPlayer=`circle`;
+        // player.src=`cross.svg`;
+        event.target.disabled=true;
+       
 
+
+       
     }
 };
 one.addEventListener(`click`,crossOrCircle);
 two.addEventListener(`click`,crossOrCircle);
 three.addEventListener(`click`,crossOrCircle);
-four.addEventListener(`click`,crossOrCircle);
+ four.addEventListener(`click`,crossOrCircle);
+ five.addEventListener(`click`,crossOrCircle);
 six.addEventListener(`click`,crossOrCircle);
 seven.addEventListener(`click`,crossOrCircle);
 eight.addEventListener(`click`,crossOrCircle);
