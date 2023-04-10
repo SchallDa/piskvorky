@@ -39,6 +39,9 @@ img {
     height:50%;
     padding:2vmin;
 }
+.changing-icon {
+    filter: invert(100%);
+}
 .hraje {
     display: inline-flex;
     align-items: center;
@@ -97,29 +100,37 @@ box-shadow: none;
 padding: 0; */
 
 }
-/button {
+/* #hraje-icon {
+    color: white;
+} */
+ button {
     /* width: 4vmin;
-    height: 4vmin;  */
-    background-size: cover;
+    /* height: 4vmin;  
+    background-size: cover; */
     /* display: inline-block; 
-    display: flex;*/
-} 
+    display: flex; */
+    padding: 4px;
+}  
 .pole:hover {
-    background-color:lavender
+    background-color:lavender 
 }
 .board__field--circle {
 background-image: url("circle.svg"); 
-background-position: 70%;
+background-position: center; 
 background-repeat: no-repeat;
-background-size: cover;
+background-size: 80%; 
+/* fill: white; */
+
 
 }
 .board__field--cross {
 background-image: url("cross.svg");
-background-position: 70%;
-background-size: cover;
+background-position: center; 
+background-repeat: no-repeat;
+background-size: 80%; 
 /* height: 100%;
 width: 100%; */
-background-repeat: no-repeat;
 
+/* fill: invert(100%); */
+/* background-origin: padding-box; */
 }

@@ -11,10 +11,13 @@ const nine=document.querySelector(`#nine`);
 const ten=document.querySelector(`#ten`);
 const playerIcon=document.querySelector(`#hraje-icon`);
 
+let nextIcon = `circle.svg`;
 
 if (currentPlayer===`circle`) {
-    playerIcon.src=`circle.svg` //přidá ikonu o za Hraje:
-} 
+    playerIcon.src=nextIcon //přidá ikonu o za Hraje:
+}
+
+
 // if (currentPlayer!==`circle`) {
 //     playerIcon.src=`cross.svg`
 // }
@@ -27,11 +30,12 @@ if (currentPlayer===`circle`) {
 
 const crossOrCircle = (event) => {
     const player=event.target.classList
-
+   
     if (currentPlayer===`circle`) {
         player.value= player.value +` ` +`board__field--circle`;
         currentPlayer=`cross`;
         event.target.disabled=true;
+        nextIcon=`cross.svg`;
         // playerIcon=`cross.svg`;
         
 
@@ -46,11 +50,11 @@ const crossOrCircle = (event) => {
         currentPlayer=`circle`;
         // player.src=`cross.svg`;
         event.target.disabled=true;
-       
-
-
+        nextIcon=`circle.svg`;
        
     }
+    playerIcon.src=nextIcon //přidá ikonu o za Hraje:
+
 };
 one.addEventListener(`click`,crossOrCircle);
 two.addEventListener(`click`,crossOrCircle);
@@ -63,3 +67,15 @@ eight.addEventListener(`click`,crossOrCircle);
 nine.addEventListener(`click`,crossOrCircle);
 ten.addEventListener(`click`,crossOrCircle);
 
+// naprogramování zpětného tlačítka
+const restart=document.querySelector(`.zpet`)
+
+
+restart.addEventListener(`click`, (event) => {
+    if (window.confirm (`Opravdu chceš začít znuvu?`)===true) {
+        window.close();
+    } else {
+      event.preventDefault();
+    }
+
+})
