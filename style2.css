@@ -95,3 +95,14 @@ box-shadow: none;
 .pole:hover {
     background-color:lavender
 }
+.board__field--circle {
+background-image: url("circle.svg"); 
+background-position: 70%;
+background-repeat: no-repeat;
+}
+.board__field--cross {
+background-image: url("cross.svg");
+background-position: 70%;
+background-repeat: no-repeat;
+
+}

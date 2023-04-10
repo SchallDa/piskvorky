@@ -9,12 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<script src="hra.js" type="module"></script>
 <body>
 <div class="hra_flex">
     <div class="hra_nadpis"><h1>Piškvorky</h1>
     </div>
     <div class="hra_stred">
-        <p class="hraje">HRAJE: &#9711</p>
+        <p class="hraje">HRAJE: 
+            <span class="changing-icon"><img id= "hraje-icon"src="" />
+            </span>
+            </p>
         <a class="domu" href="index.html">
             <img src="home.svg" alt="ikona_domu">
         </a>
@@ -24,16 +28,16 @@
     </div>
     <div class="hra_tabulka">
         <table class="hraci_pole">
-        <tr><td><button class="pole"></button></td>
-            <td><button class="pole"></button></td>
-            <td><button class="pole"></button></td>
-            <td><button class="pole"></button></td>
-            <td><button class="pole"></button></td>
-            <td><button class="pole"></button></td>
-            <td><button class="pole"></button></td>
-            <td><button class="pole"></button></td>
-            <td><button class="pole"></button></td>
-            <td><button class="pole"></button></td>
+        <tr><td id="one" ><button class="pole"></button></td>
+            <td id="two"><button class="pole"></button></td>
+            <td id="three"><button class="pole"></button></td>
+            <td id="four"><button class="pole"></button></td>
+            <td id="five"><button class="pole"></button></td>
+            <td id="six"><button class="pole"></button></td>
+            <td id="seven"><button class="pole"></button></td>
+            <td id="eight"><button class="pole"></button></td>
+            <td id="nine"><button class="pole"></button></td>
+            <td id="ten"><button class="pole"></button></td>
         </tr>
         <tr><td><button class="pole"></button></td>
             <td><button class="pole"></button></td>
@@ -137,5 +141,7 @@
     </table>
     </div>
 </div>
+<!-- <span class="board__field--circle"> <img src="circle.svg" alt="circle_icon"> </span> 
+<span class="board__field--cross"> <img src="cross.svg" alt="cross_icon"> </span> -->
 </body>
 </html>
