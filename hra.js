@@ -73,9 +73,7 @@ const restart=document.querySelector(`.zpet`)
 
 restart.addEventListener(`click`, (event) => {
     if (window.confirm (`Opravdu chceš začít znuvu?`)===true) {
-        window.close();
-    } else {
-      event.preventDefault();
-    }
+        window.location.reload();
+    } 
 
 })
