@@ -60,11 +60,20 @@ const isGameOver = () => {
 
   const winner = findWinner(oAndXSymbols);
   if (winner === `o`) {
-    alert(`Vyhrálo kolečko`);
+    setTimeout (() => {
+    alert(`Vyhrálo kolečko.`);
+    location.reload();
+  }, 300);
   } else if (winner === `x`) {
-    alert(`Vyhrál křížek`);
+    setTimeout (() => {
+        alert(`Vyhrál křížek.`);
+        location.reload();
+      }, 300);
   } else if (winner === `tie`) {
-    alert(`Hra skončila nerozhodně.`);
+    setTimeout (() => {
+        alert(`Hra skončila neroznodně.`);
+        location.reload();
+      }, 300);
   }
   // else if (winner===null) {
   //     alert(`Hra ještě probíhá`)
