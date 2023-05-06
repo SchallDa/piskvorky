@@ -16,6 +16,9 @@ const crossOrCircle = (event) => {
     currentPlayer = `cross`;
     event.target.disabled = true;
     nextIcon = `cross.svg`;
+    if (!isGameOver()) {
+      oVsAI(); // volání fce z úkolu 5
+    }
   } else {
     player.src = `circle.svg`;
     currentPlayer === `cross`;
@@ -23,18 +26,18 @@ const crossOrCircle = (event) => {
     currentPlayer = `circle`;
     event.target.disabled = true;
     nextIcon = `circle.svg`;
+    isGameOver();
   }
   playerIcon.src = nextIcon; //přidá ikonu o za Hraje:
-  isGameOver();
+
 };
 // naprogramování tlačítka "Zpět"
-// const restart=document.querySelector(`.zpet`)
-// restart.addEventListener(`click`, (event) => {
-//     if (window.confirm (`Opravdu chceš začít znuvu?`)===true) {
-//         window.location.reload();
-//     }
-
-// })
+const restart=document.querySelector(`.zpet`)
+restart.addEventListener(`click`, (event) => {
+    if (window.confirm (`Opravdu chceš začít znuvu?`)===true) {
+        window.location.reload();
+    }
+})
 
 // přidání fce pro všechna tlačítka .pole
 const playGroundElm = document.querySelectorAll(`.pole`);
@@ -42,22 +45,25 @@ const playArrayElm = Array.from(playGroundElm);
 playArrayElm.forEach((pole) => {
   pole.addEventListener("click", crossOrCircle);
 });
+// vytvoření fce pro nalezení vítěze, použití v úkolu 5 pro board:
+const mapField =() => {
+return playArrayElm.map((pole) => {
+  if (pole.classList.contains(`board__field--circle`)) {
+    return `o`;
+  }
+  if (pole.classList.contains(`board__field--cross`)) {
+    return `x`;
+  } else {
+    return `_`;
+  }
+});
+}
 
 
 // nalezení vítěze (přidání fce isGameOver do crossOrCircle, aby se jednotlivá políčka procházela periodicky po každém kliknutí, nikoliv jen na začátku)
 const isGameOver = () => {
-  const oAndXSymbols = playArrayElm.map((pole) => {
-    if (pole.classList.contains(`board__field--circle`)) {
-      return `o`;
-    }
-    if (pole.classList.contains(`board__field--cross`)) {
-      return `x`;
-    } else {
-      return `_`;
-    }
-  });
+  const oAndXSymbols = mapField();
   console.log(oAndXSymbols);
-
   const winner = findWinner(oAndXSymbols);
   if (winner === `o`) {
     setTimeout (() => {
@@ -75,8 +81,34 @@ const isGameOver = () => {
         location.reload();
       }, 300);
   }
-  // else if (winner===null) {
-  //     alert(`Hra ještě probíhá`)
-  // }
   console.log(winner);
+
+// pro úkol 5, aby to po skončení hry neukazovalo v konzoli 404
+      return winner!==null;
+  
+
+};
+
+  //Úkol 5
+  const oVsAI = () => {
+const fields = document.querySelectorAll('.pole')
+fetch('https://piskvorky.czechitas-podklady.cz/api/suggest-next-move', {
+method: 'POST',
+	headers: {
+		'Content-type': 'application/json',
+	},
+	body: JSON.stringify({
+		board: mapField(),
+		player: 'x', 
+	}),
+})
+	.then((response) => response.json())
+	.then((data) => {
+    console.log(data);
+		const { x, y } = data.position 
+		const field = fields[x + y * 10] 
+		field.click() 
+	})
+  console.log(fields)
+
 };
